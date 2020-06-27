@@ -7,8 +7,8 @@ function App() {
   return (
     <div className>
       <Appbar></Appbar>
-      <AddProduct></AddProduct>
       <SimpleBottomNavigation></SimpleBottomNavigation>
+      <AddProduct></AddProduct>
     </div>
   );
 }
