@@ -1,14 +1,20 @@
 import React from 'react';
+
 import SimpleBottomNavigation from './components/Navigation'
 import Appbar from './components/Appbar'
 import AddProduct from './components/AddProduct'
-
+import { GlobalProvider } from './state/GlobalState'
+import Shop from './components/Shop'
+ 
 function App() {
   return (
-    <div className>
+    <div>
       <Appbar></Appbar>
+      <GlobalProvider>
       <SimpleBottomNavigation></SimpleBottomNavigation>
       <AddProduct></AddProduct>
+      <Shop></Shop>
+      </GlobalProvider>
     </div>
   );
 }
