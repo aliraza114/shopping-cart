@@ -8,7 +8,19 @@ export default (state, action) => {
         case 'ADD_PRODUCT_TO_CART':
             return {
                 ...state,
-                cart: state.products.find(product => product.id === action.payload)
+                cart: [action.payload, ...state.cart]
+            }
+        case 'ADD_PRODUCT_QUANTITY':
+            state.cart[state.cart.findIndex(cartItem => cartItem.id === action.payload)].quantity++
+            return {
+                ...state,
+                cart: [...state.cart]
+            }
+        case 'REMOVE_PRODUCT_QUANTITY':
+            state.cart[state.cart.findIndex(cartItem => cartItem.id === action.payload)].quantity--
+            return {
+                ...state,
+                cart: [...state.cart]
             }
         default:
             return state
