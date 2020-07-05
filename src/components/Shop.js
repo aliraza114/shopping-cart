@@ -37,6 +37,8 @@ const { cart, products, addToCardFunction, addProductQuantity } = useContext(Glo
         cart.find(item => item.id === product.id) ? addProductQuantity(product.id) : addToCardFunction(product)
     }
 
+    console.log('P ', products)
+
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
